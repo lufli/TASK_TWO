@@ -2,6 +2,7 @@ const Record = require('../models/record');
 const Text = require('../models/text');
 
 exports.vote = function(req, res, next) {
+  console.log(req.body.username)
   const current = new Date().toISOString().substring(0, 10);
   Record.findOne({
     $and: [ { text: req.body.text }, { date: current } ]
@@ -17,7 +18,7 @@ exports.vote = function(req, res, next) {
         recordModel.text = text._id;
         recordModel.headline = text.headline;
         recordModel.date = current;
-        recordModel.votedBy = [req.username];
+        recordModel.votedBy = [req.body.username];
         recordModel.save(function(err, newRecord) {
           if (err) { return next(err); }
         });

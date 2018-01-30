@@ -38,6 +38,11 @@ app.post('/api/create', Text.create);
 app.get('/api/fetch', Text.fetch);
 app.post('/api/vote', Record.vote);
 app.get('/api/show', Record.show);
+app.use(redirectUnmatched);
+function redirectUnmatched(req, res) {
+  res.redirect("/");
+}
+
 
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);

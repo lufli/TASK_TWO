@@ -20,7 +20,7 @@ mongoose.connect('mongodb://root:118@ds113648.mlab.com:13648/task_2');
 
 app.use(bodyParser.json({ type: '*/*' }));
 app.use(webpackDevMiddleware(compiler, {
-  hot: true,
+  hot: false,
   filename: 'bundle.js',
   publicPath: '/',
   stats: {

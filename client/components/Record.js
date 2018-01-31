@@ -12,7 +12,7 @@ class Record extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/show').then((response) => {
+    axios.get('http://54.244.38.56/api/show').then((response) => {
       this.setState({
         records: response.data.records
       })

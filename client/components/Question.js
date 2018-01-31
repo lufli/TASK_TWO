@@ -16,7 +16,7 @@ class Question extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/fetch').then((res) => {
+    axios.get('http://54.244.38.56/api/fetch').then((res) => {
       this.setState({
         texts: res.data.texts,
         current: Math.floor(Math.random() * res.data.texts.length)
@@ -32,7 +32,7 @@ class Question extends Component {
   }
 
   onVoteButtonClick() {
-    axios.post('http://localhost:3000/api/vote', {
+    axios.post('http://54.244.38.56/api/vote', {
       username: this.state.username,
       text: this.state.texts[this.state.current]._id
     }).then(() => {

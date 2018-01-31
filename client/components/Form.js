@@ -31,7 +31,7 @@ class Form extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:3000/api/create', this.state)
+    axios.post('http://54.244.38.56/api/create', this.state)
     .then(res => {console.log(res)});
     this.props.history.push('/');
   }

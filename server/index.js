@@ -35,7 +35,7 @@ app.get('/', (request, response) => {
 });
 
 app.get('/tpt', (request, response) => {
-  response.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
+  response.sendFile(path.resolve(__dirname, '..', 'public', 'tpt.html'))
 })
 
 app.get('/img/:filename', function(req, res) {

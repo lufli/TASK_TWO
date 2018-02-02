@@ -34,6 +34,14 @@ app.get('/', (request, response) => {
   response.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
+app.get('/tpt', (request, response) => {
+  response.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
+})
+
+app.get('/img/:filename', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '..', 'public', req.params.filename))
+})
+
 app.post('/api/create', Text.create);
 app.get('/api/fetch', Text.fetch);
 app.post('/api/vote', Record.vote);
